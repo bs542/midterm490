@@ -1,4 +1,15 @@
 <form style="border:1px solid #ccc">
+
+
+  <style>
+    body {
+      background-image: url('https://api.drinkiq.com/PR1632api.drinkiq.com/media/k2ropbss/isittruethatbeer-hero-16-9-1600x900.png');
+      background-repeat: no-repeat;
+      background-attachment: fixed;
+      background-size: cover;
+      }
+  </style>
+
     <div class="container">
         <H1 align="center"> Variety Alcoholic Beverages! </H1>
         <H1 align="left"> Sign up </H1>
@@ -20,6 +31,7 @@
       <!--calculate the age of the user 3/31/22-->
       
     <head>  
+      
         <script>  
         function ageCalculator() {  
             var userinput = document.getElementById("DOB").value;  
@@ -30,39 +42,25 @@
             } else {  
               
             //calculate month difference from current date in time  // baljit singh
-            var month_diff = Date.now() - dob.getTime();  
-              
+            var month_diff = Date.now() - dob.getTime();     
             //convert the calculated difference in date format  
-            var age_dt = new Date(month_diff);   
-              
+            var age_dt = new Date(month_diff);      
             //extract year from date      
-            var year = age_dt.getUTCFullYear();  
-              
+            var year = age_dt.getUTCFullYear();    
             //now calculate the age of the user  
             var age = Math.abs(year - 1970);  
               
             //display the calculated age  
-            if(age < 21){                                                               /////////////use pop up if under age//////////////
-                
-                alert("You are under age,  the page is going to get redirected" );
+            if(age < 21){                                                               /////////////use pop up if under age/////////////
+              
+              alert("You are under age, you must be 21 YEARS OLD" );
+              window.location.href = "register.html"; 2000;
+              return document.getElementById("result").innerHTML = "redirecting "; }
 
-                
-       window.location.href = "register.html"; 2000;
-            return document.getElementById("result").innerHTML =    
-                     "redirecting ";
-                     ;
-                     
-            }
+            else{ "Age is accepted"}}}
 
-            else{ "Age is accepted"}
-                     
-                     
-            }  
-        }  
         </script>  
-        </head> 
-        
-        
+    </head> 
 
         <body>  
         <left>  
@@ -70,26 +68,24 @@
           
         <!-- Choose a date and enter in input field -->  
         <b> Enter Date of Birth: <input type=date id = DOB> </b>  
-        <span id = "message" style="color:red"> </span> <br><br>    
+         <br><br>    
           
-        <!-- Choose a date and enter in input field -->  
-        <button type="submit" onclick = "ageCalculator()"> Calculate age </button> <br><br>  
-        <h3 style="color:32A80F" id="result" align="center"></h3>   
+        <!-- Choose a date -->  
+        <button type="submit" onclick = "ageCalculator()"> Calculate age </button> <br><br>     
         </center>  
         </body>  
      
-  
-      <p>By creating an account you agree to our <a href="#" style="color:dodgerblue">Terms & Privacy</a>.</p>
+ <p>By creating an account you agree to our <a href="https://www.nj.gov/oag/abc/downloads/abcmunicipalhandbook.pdf" style="color:dodgerblue">Terms & Privacy</a>.</p>
   
       <div class="clearfix">
         <button type="button" class="cancelbtn">Cancel</button>
-        <button type="submit" class="signupbtn">Sign Up</button>
+        <button type="submit" class="signupbtn">Sign Up</button>    <!--have to do POST to put info into database-->
       </div>
-    </div>
+    </div>     <!--line-->
 
     
   </form>
-  <H1 align="left"> or <br> <br> Sign in </H1>
+  <H1 align="left">  <br> Sign in </H1>
       <input type="text" placeholder="Enter Username" name="Username" required>
   
       <label for="psw"><b>Password</b></label>
@@ -101,13 +97,11 @@
   
       <div class="clearfix"><br>
         
-        <button type="button" class="cancelbtn">Cancel</button><br>
-        <form action="questions.html" method="POST">  
+        <button type="button" class="cancelbtn">Cancel</button>
+        <form action="questions.html" method="GET"> <!--will be get because the info is going to get pull from database-->
             <input type="submit"/>  
-          </form>
+        </form>
         
       </div>
-    </div>
-            
-          
-  </form>
+    </div>       
+</form>
