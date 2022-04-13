@@ -57,9 +57,6 @@ SSLCipherSuite EECDH+AESGCM:EDH+AESGCM:AES256+EECDH:AES256+EDH
 To get out of NANO:
 cntrl O, enter, cntrl X
 ------------------------------------------------------------------------------------- 
-Denise — 04/08/2022
-Image
-Image
 -------------------------------------------------------------------------------------
 sudo ufw app list
 sudo ufw app info "Apache Full"
