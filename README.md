@@ -71,3 +71,22 @@ sudo systemctl restart apache2
 IN BROWERS:
 type in URL search: 
 https://localhost/
+
+
+
+
+
+
+-------------------------------------------------------------------------------------
+
+
+
+
+april/12/22 
+
+assigned to work on replicated database/firewall
+
+
+
+
+
