@@ -1,0 +1,34 @@
+Now we are going to do master to master because we need access to both databases.
+
+Earlier, Mahi was setup as master and Baljit was setup as slave now we will do vice-versa to so both can have access to database files of each other. 
+
+At 2:31 pm while working on the steps to make the master to master. mahi made a mistake and changed config file to readable only he couldn’t ping anyone so he had to change it. 
+
+
+Then we decided to change everything and we found this articles	to implement master-master
+https://www.interserver.net/tips/kb/master-master-replication-mysql-server/
+
+
+using that We created the master to master on each others vm's. 
+
+
+we encountered an issue, Baljits machine was connecting but Mahi’s machine wasn’t connecting.
+
+
+we ran the "Show slave status"  which was providing this error below:
+
+error connecting to master 'baljit@192.168.191.217:3306' - retry-time: 60 retries: 2 message: Can't connect to MySQL server on '192.168.191.217:3306' (111)
+ 
+
+
+
+
+In order to solve the port error. we looked online and issue were showing up to be 3306 port error and most of the issues were releated to iptables.
+
+
+Then ip tables got erased accidentally and 1 master wasn’t connecting to any network now even local host. 
+
+So we restarted the machine and the problem was resloved. 
+
+
+But the issue of connection was still there. 
