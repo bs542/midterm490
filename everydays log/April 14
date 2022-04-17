@@ -1,0 +1,28 @@
+Apr/14/22
+
+x----------------------------x---------------------------------x--------------------------------x
+
+Working on the replicated database making Mahi as master and mine as slave.
+
+first we created ssh connection between the both master and slave. 
+
+make sure the Firewalls should be disabled and abled by slave connection. + Ssh should be turned on for both connections. 
+
+Master slave could take the data but realized that it will not be compatible with hatstandby, Then we thought of using postgreSQL. 
+
+                     https://www.howtoforge.com/tutorial/postgresql-replication-on-ubuntu-15-04/
+                     
+we will  be using postgreSQL using the hatstand by mode. 
+
+
+5:03 pm- going to use postgreSQL
+
+But changed the plan then we used sticked to the master and slave idea And just creating master(mahi) to slave(baljit).
+
+we got that to work but the problem is that 
+
+Master adds data into database and it changes into the slave's database too but it would only work if the master is on.
+
+if the master dies the connection ends. 
+
+then we thought of making master to master so the we can change data on both databses insteas of just one.
