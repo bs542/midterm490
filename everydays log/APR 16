@@ -1,0 +1,26 @@
+continuation on solving the port errors:
+
+today we are trying to solve the issue OF PORT 3306 we are having on one master.
+
+first we rechecked the files and found an error in file below
+
+x----------------------------x---------------------------------x--------------------------------x
+
+SIDE NOTE: When creating the sudo nano /etc/mysql/mysql.conf.d/mysqld.cnf
+
+always makes sure the bind address is for the own actual machine else the other master won’t be able to communicate. 
+
+x----------------------------x---------------------------------x--------------------------------x
+
+we found an article that talks about creating the files and in it we missed a step.
+
+https://www.jianshu.com/p/01d80d3a3659
+
+x----------------------------x---------------------------------x--------------------------------x
+ 
+The PROBLEM was that we created the master slave first but them implemented master to master. But didn’t realize that one master cannot be a slave/degrade(wasn’t implemented). The link below helped use to solve the issue
+
+
+Now both masters can communicate with each others and the hatstandby for database is working. (1:26 pm)
+
+BOTH DATABASES CAN WORK INDEPENDIENTLY
